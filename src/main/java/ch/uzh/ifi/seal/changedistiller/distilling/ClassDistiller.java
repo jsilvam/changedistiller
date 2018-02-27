@@ -218,10 +218,14 @@ public class ClassDistiller {
         if (diffNode.isAddition()) {
             Insert insert =
                     new Insert(fRootEntity, fRightASTHelper.createSourceCodeEntity(diffNode.getRight()), fParentEntity);
+            insert.setDeclarationStructure(fRightASTHelper.createDeclarationTree(diffNode.getRight()));
+            insert.setBodyStructure(fRightASTHelper.createMethodBodyTree(diffNode.getRight()));
             fRefactoringContainer.addCandidate(new RefactoringCandidate(insert, diffNode));
         } else if (diffNode.isDeletion()) {
             Delete delete =
                     new Delete(fRootEntity, fLeftASTHelper.createSourceCodeEntity(diffNode.getLeft()), fParentEntity);
+            delete.setDeclarationStructure(fLeftASTHelper.createDeclarationTree(diffNode.getLeft()));
+            delete.setBodyStructure(fLeftASTHelper.createMethodBodyTree(diffNode.getLeft()));
             fRefactoringContainer.addCandidate(new RefactoringCandidate(delete, diffNode));
         } else if (diffNode.isChanged()) {
             processFineGrainedChanges(diffNode);

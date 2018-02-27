@@ -25,6 +25,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import ch.uzh.ifi.seal.changedistiller.model.classifiers.ChangeType;
 import ch.uzh.ifi.seal.changedistiller.model.classifiers.SignificanceLevel;
+import ch.uzh.ifi.seal.changedistiller.treedifferencing.Node;
 
 /**
  * General (abstract) representation of a source code change.
@@ -68,6 +69,9 @@ public class SourceCodeChange {
      * Source code entity that becomes the parent entity when the change is applied.
      */
     private SourceCodeEntity fParentEntity;
+    
+    private Node declarationStructure;
+    private Node bodyStructure;
 
     SourceCodeChange() {}
 
@@ -233,5 +237,23 @@ public class SourceCodeChange {
                 .append(getParentEntity(), other.getParentEntity()).append(getRootEntity(), other.getRootEntity())
                 .isEquals();
     }
+
+	public Node getDeclarationStructure() {
+		return declarationStructure;
+	}
+
+	public void setDeclarationStructure(Node declarationStructure) {
+		this.declarationStructure = declarationStructure;
+	}
+
+	public Node getBodyStructure() {
+		return bodyStructure;
+	}
+
+	public void setBodyStructure(Node bodyStructure) {
+		this.bodyStructure = bodyStructure;
+	}
+    
+    
 
 }
