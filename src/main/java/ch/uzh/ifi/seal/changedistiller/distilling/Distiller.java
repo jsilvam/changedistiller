@@ -46,7 +46,7 @@ public class Distiller {
     private SourceCodeChangeClassifier fClassifier;
 
     @Inject
-    Distiller(
+    public Distiller(
             @Assisted StructureEntityVersion structureEntity,
             TreeDifferencer treeDifferencer,
             SourceCodeChangeClassifier classifier) {
@@ -54,6 +54,10 @@ public class Distiller {
         fChangeConverter = new SourceCodeChangeConverter(fStructureEntity);
         fTreeDifferencer = treeDifferencer;
         fClassifier = classifier;
+    }
+    
+    public StructureEntityVersion getStructureEntity() {
+    	return fStructureEntity;
     }
 
     /**

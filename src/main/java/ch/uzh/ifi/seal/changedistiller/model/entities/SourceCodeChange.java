@@ -70,6 +70,7 @@ public class SourceCodeChange {
      */
     private SourceCodeEntity fParentEntity;
     
+    private StructureEntityVersion EntityVersion;
     private Node declarationStructure;
     private Node bodyStructure;
 
@@ -253,7 +254,16 @@ public class SourceCodeChange {
 	public void setBodyStructure(Node bodyStructure) {
 		this.bodyStructure = bodyStructure;
 	}
+
+	public StructureEntityVersion getEntityVersion() {
+		return EntityVersion;
+	}
+
+	public void setEntityVersion(StructureEntityVersion entityVersion) {
+		EntityVersion = entityVersion;
+	}
     
+	
     
 
 }
