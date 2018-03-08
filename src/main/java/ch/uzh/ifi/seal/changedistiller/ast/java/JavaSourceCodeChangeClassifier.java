@@ -107,7 +107,7 @@ public class JavaSourceCodeChangeClassifier implements SourceCodeChangeClassifie
         return classifiedChanges;
     }
 
-    private SourceCodeChange classify(Insert insert) {
+    public SourceCodeChange classify(Insert insert) {
         SourceCodeChange result = null;
 
         if (insert.getChangeType() != ChangeType.UNCLASSIFIED_CHANGE) {
@@ -616,7 +616,7 @@ public class JavaSourceCodeChangeClassifier implements SourceCodeChangeClassifie
         return result;
     }
 
-    private SourceCodeChange classify(Delete delete) {
+    public SourceCodeChange classify(Delete delete) {
         SourceCodeChange result = null;
 
         if (delete.getChangeType() != ChangeType.UNCLASSIFIED_CHANGE) {
@@ -831,7 +831,7 @@ public class JavaSourceCodeChangeClassifier implements SourceCodeChangeClassifie
         return result;
     }
 
-    private SourceCodeChange classify(Move move) {
+    public SourceCodeChange classify(Move move) {
         SourceCodeChange result = null;
 
         if (move.getChangeType() != ChangeType.UNCLASSIFIED_CHANGE) {
@@ -883,7 +883,7 @@ public class JavaSourceCodeChangeClassifier implements SourceCodeChangeClassifie
         return result;
     }
 
-    private SourceCodeChange classify(Update update) {
+    public SourceCodeChange classify(Update update) {
         SourceCodeChange result = null;
 
         if (update.getChangeType() != ChangeType.UNCLASSIFIED_CHANGE) {

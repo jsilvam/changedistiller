@@ -66,11 +66,11 @@ public class SourceCodeChange {
     private SourceCodeEntity fChangedEntity;
 
     /**
-     * Source code entity that becomes the parent entity when the change is applied.
+     * Source code entity that becomes tentityVersionhe parent entity when the change is applied.
      */
     private SourceCodeEntity fParentEntity;
     
-    private StructureEntityVersion EntityVersion;
+    private StructureEntityVersion structureEntityVersion;
     private Node declarationStructure;
     private Node bodyStructure;
 
@@ -255,12 +255,12 @@ public class SourceCodeChange {
 		this.bodyStructure = bodyStructure;
 	}
 
-	public StructureEntityVersion getEntityVersion() {
-		return EntityVersion;
+	public StructureEntityVersion getStructureEntityVersion() {
+		return structureEntityVersion;
 	}
 
-	public void setEntityVersion(StructureEntityVersion entityVersion) {
-		EntityVersion = entityVersion;
+	public void setStructureEntityVersion(StructureEntityVersion structureEntityVersion) {
+		this.structureEntityVersion = structureEntityVersion;
 	}
     
 	
