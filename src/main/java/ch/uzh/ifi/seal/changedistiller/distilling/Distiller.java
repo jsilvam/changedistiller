@@ -59,6 +59,11 @@ public class Distiller {
     public StructureEntityVersion getStructureEntity() {
     	return fStructureEntity;
     }
+    
+
+    public List<SourceCodeChange> getSourceCodeChanges(){
+    	return this.fStructureEntity.getSourceCodeChanges();
+    }
 
     /**
      * Extracts and classifies {@link SourceCodeChange}s between the left and the right {@link Node} tree. The
