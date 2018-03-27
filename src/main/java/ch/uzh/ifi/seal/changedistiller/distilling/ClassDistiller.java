@@ -290,6 +290,7 @@ public class ClassDistiller {
                 fLeftASTHelper.createDeclarationTree(diffNode.getLeft()),
                 fRightASTHelper.createDeclarationTree(diffNode.getRight()),
                 rootEntity);
+        rootEntity.setBody(fRightASTHelper.createMethodBodyTree(diffNode.getRight()));
     }
 
     private void processBodyChanges(StructureDiffNode diffNode, StructureEntityVersion rootEntity) {
@@ -297,6 +298,8 @@ public class ClassDistiller {
                 fLeftASTHelper.createMethodBodyTree(diffNode.getLeft()),
                 fRightASTHelper.createMethodBodyTree(diffNode.getRight()),
                 rootEntity);
+        rootEntity.setBody(fRightASTHelper.createMethodBodyTree(diffNode.getRight()));
+        
     }
 
     private void extractChanges(Node left, Node right, StructureEntityVersion rootEntity) {

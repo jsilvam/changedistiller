@@ -25,6 +25,7 @@ import java.util.List;
 
 import ch.uzh.ifi.seal.changedistiller.model.classifiers.ChangeModifier;
 import ch.uzh.ifi.seal.changedistiller.model.classifiers.EntityType;
+import ch.uzh.ifi.seal.changedistiller.treedifferencing.Node;
 
 /**
  * A structure entity version consists of all {@link SourceCodeChange}s applied in a version of an attribute, a class,
@@ -45,8 +46,18 @@ public class StructureEntityVersion {
     private Integer fModifiers = 0;
     private String fVersion;
     private List<SourceCodeChange> fSourceCodeChanges;
+    private Node body;
 
-    StructureEntityVersion() {
+    
+    public Node getBody() {
+		return body;
+	}
+
+	public void setBody(Node body) {
+		this.body = body;
+	}
+
+	StructureEntityVersion() {
         setSourceCodeChanges(new LinkedList<SourceCodeChange>());
     }
 
