@@ -46,19 +46,30 @@ public class StructureEntityVersion {
     private Integer fModifiers = 0;
     private String fVersion;
     private List<SourceCodeChange> fSourceCodeChanges;
-    private Node body;
+    private Node bodyLeft;
+    private Node bodyRigth;
 
-    
-    public Node getBody() {
-		return body;
+	public Node getBodyLeft() {
+		return bodyLeft;
 	}
 
-	public void setBody(Node body) {
-		this.body = body;
+	public void setBodyLeft(Node bodyLeft) {
+		this.bodyLeft = bodyLeft;
+	}
+
+	public Node getBodyRigth() {
+		return bodyRigth;
+	}
+
+	public void setBodyRigth(Node bodyRigth) {
+		this.bodyRigth = bodyRigth;
 	}
 
 	StructureEntityVersion() {
         setSourceCodeChanges(new LinkedList<SourceCodeChange>());
+        this.bodyLeft = null;
+        this.bodyRigth = null;
+        
     }
 
     /**
