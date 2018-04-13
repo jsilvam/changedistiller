@@ -293,12 +293,13 @@ public class ClassDistiller {
     }
 
     private void processBodyChanges(StructureDiffNode diffNode, StructureEntityVersion rootEntity) {
-        extractChanges(
+    	rootEntity.setBodyLeft(fLeftASTHelper.createMethodBodyTree(diffNode.getLeft()));
+        rootEntity.setBodyRigth(fRightASTHelper.createMethodBodyTree(diffNode.getRight()));
+    	extractChanges(
                 fLeftASTHelper.createMethodBodyTree(diffNode.getLeft()),
                 fRightASTHelper.createMethodBodyTree(diffNode.getRight()),
                 rootEntity);
-        rootEntity.setBodyLeft(fRightASTHelper.createMethodBodyTree(diffNode.getLeft()));
-        rootEntity.setBodyRigth(fRightASTHelper.createMethodBodyTree(diffNode.getRight()));
+        
         
     }
 
