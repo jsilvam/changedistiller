@@ -192,6 +192,11 @@ public class RefactoringCandidateProcessor {
             extractChanges(leftRoot, rightRoot, structureEntityVersion);
             leftRoot = fLeftASTHelper.createMethodBodyTree(leftDrn);
             rightRoot = fRightASTHelper.createMethodBodyTree(rightDrn);
+            if(leftRoot!=null &&
+            		leftRoot.getEntity().getType().isMethod()) {
+            	structureEntityVersion.setBodyLeft(leftRoot);
+            	structureEntityVersion.setBodyRigth(rightRoot);
+            }
             extractChanges(leftRoot, rightRoot, structureEntityVersion);
             fChanges.addAll(structureEntityVersion.getSourceCodeChanges());
         }
