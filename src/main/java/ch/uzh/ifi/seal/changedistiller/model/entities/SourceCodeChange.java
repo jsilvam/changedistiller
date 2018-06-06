@@ -73,6 +73,7 @@ public class SourceCodeChange {
     private StructureEntityVersion structureEntityVersion;
     private Node declarationStructure;
     private Node bodyStructure;
+    private boolean refactoringRelated;
 
     SourceCodeChange() {}
 
@@ -111,6 +112,7 @@ public class SourceCodeChange {
         setChangedEntity(changedEntity);
         setParentEntity(parentEntity);
         setRootEntity(rootEntity);
+        refactoringRelated = false;
     }
 
     public final void setChangedEntity(SourceCodeEntity changedEntity) {
@@ -261,6 +263,14 @@ public class SourceCodeChange {
 
 	public void setStructureEntityVersion(StructureEntityVersion structureEntityVersion) {
 		this.structureEntityVersion = structureEntityVersion;
+	}
+
+	public boolean isRefactoringRelated() {
+		return refactoringRelated;
+	}
+
+	public void setRefactoringRelated(boolean refactoringRelated) {
+		this.refactoringRelated = refactoringRelated;
 	}
     
 	
